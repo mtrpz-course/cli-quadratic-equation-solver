@@ -19,4 +19,11 @@ tasks.test {
 
 kotlin {
     jvmToolchain(8)
+    sourceSets {
+        main {
+            dependencies {
+                implementation("org.jetbrains.kotlinx:kotlinx-cli:0.3.5")
+            }
+        }
+    }
 }
