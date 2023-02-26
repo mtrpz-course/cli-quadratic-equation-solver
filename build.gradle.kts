@@ -41,6 +41,9 @@ val jar by tasks.getting(Jar::class) {
             "Main-Class" to "cli.app.AppKt",
         )
     }
+    from(sourceSets.main.get().output)
+
+    from(configurations.compileClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
 
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
