@@ -47,3 +47,12 @@ val jar by tasks.getting(Jar::class) {
 
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
+
+tasks.register<Copy>("packageDistribution") {
+    dependsOn("jar")
+    from("${project.rootDir}/scripts/equation.sh")
+    from("${project.buildDir}/libs/${project.name}-$version.jar") {
+        into("lib")
+    }
+    into("${project.rootDir}/dest")
+}
