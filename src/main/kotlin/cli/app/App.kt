@@ -35,7 +35,7 @@ fun switchToInteractiveMode() {
     if (descriminant == 0.0) {
         println("There is only one root: $x1")
     } else if (descriminant > 0) {
-        println("There are two roots: \n x1 = $x1 \n x2 = $x2")
+        println("There are two roots: \n ${Coefficient.X}1 = $x1  \n ${Coefficient.X}2 = $x2")
     } else if (descriminant < 0) println("There are no roots")
 }
 fun checkCoefForValidity(coef: Coefficient): Double {
@@ -60,4 +60,5 @@ enum class Coefficient(val value: String) {
     A("a"),
     B("b"),
     C("c"),
+    X("x"),
 }
