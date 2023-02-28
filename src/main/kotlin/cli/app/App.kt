@@ -17,14 +17,27 @@ fun main(args: Array<String>) {
     val inputFile by parser.option(
         ArgType.String,
         shortName = "f",
-        description = "Input file",
+        description = """ file.txt
+            |Non-interactive mode.  
+            |Read coefficients from the 1-st line of TXT-file in format: "a\sb\sc\n"
+            |Example: file.txt
+             1. 1 0 0
+             2. ------------------
+        """,
     ).default("")
+    val noArgs by parser.option(
+        ArgType.Boolean,
+        description = """ no-args
+            |Interactive mode.
+            |Read coefficients from the console one by one.
+        """,
+    ).default(args.isEmpty())
     parser.parse(args)
 
     if (version) {
         println(App.VERSION)
     }
-    if (args.isEmpty()) {
+    if (noArgs) {
         switchToInteractiveMode()
     }
     if (inputFile.isNotEmpty()) {
@@ -84,6 +97,7 @@ fun solveQuadraticEquation(a: Double, b: Double, c: Double) {
     val descriminant = b * b - 4 * a * c
     val x1 = (-b + sqrt(descriminant)) / (2 * a)
     val x2 = (-b - sqrt(descriminant)) / (2 * a)
+    println("Equation: ($a)*x^2 + ($b)*x + ($c) = 0")
 
     if (descriminant == 0.0) {
         println("There is only one root: $x1")
