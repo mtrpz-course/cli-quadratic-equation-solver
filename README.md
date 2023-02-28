@@ -51,10 +51,24 @@ equation -h
 For more information about the application, run the following command:
 ```bash
 equation -h
+```
+```textmate
 Usage: equation options_list
 Options: 
     --version, -v [false] -> 1.0.0 
-    --inputFile, -f [] -> Input file { String }
+    --inputFile, -f [] ->  file.txt
+            |Non-interactive mode.  
+            |Read coefficients from the 1-st line of TXT-file in format: "a\sb\sc\n"
+            |Example: file.txt
+             1. 1 0 0
+             2. ------------------
+         { String }
+    --noArgs [false] ->  no-args
+            |Interactive mode.
+            |Read coefficients from the console one by one.
+         
     --help, -h -> Usage info 
-
 ```
+## Revert-commits
+* [Revert-1](https://github.com/mtrpz-course/cli-quadratic-equation-solver/commit/295b3b29ddc7e7731b5f57d742423ec51e9fbb95)
+* [Revert-2](https://github.com/mtrpz-course/cli-quadratic-equation-solver/commit/8686465937871752b61b8194a8f6144c93d2a2f0)
