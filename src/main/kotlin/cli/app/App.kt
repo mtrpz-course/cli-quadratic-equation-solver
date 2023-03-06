@@ -65,7 +65,12 @@ fun checkInputForValidity(coef: Coefficient): Double {
         print("Enter ${coef.value}: ")
         input = readlnOrNull()
         value = input?.toDoubleOrNull()
-        if (value == null) println("Error. Expected a valid real number, got $input instead\n")
+        if (value == null) {
+            println("Error. Expected a valid real number, got $input instead\n")
+        } else if (value.toInt() == 0 && coef == Coefficient.A) {
+            println("Error. Expected a not-nullable value of A coefficient\n")
+            value = null
+        }
     } while (value == null)
 
     return value
