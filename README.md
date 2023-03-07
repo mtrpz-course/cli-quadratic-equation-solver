@@ -2,7 +2,7 @@
 This is lab 1 for the course "Software development methodology" at the Kiev Polytechnic Institute.
 > A multiplatform CLI-application written in Kotlin, using [kotlinx-cli](https://github.com/Kotlin/kotlinx-cli) **library**.
 >
-> Download [_here_](https://github.com/mtrpz-course/cli-quadratic-equation-solver/releases/download/1.0.0/cli-quadratic-equation-solver-1.0-SNAPSHOT.jar).
+> Download [_here_](https://github.com/mtrpz-course/cli-quadratic-equation-solver/releases/download/1.0.1/qes1.0.1.zip).
 -------------------------------
 ## Description
 The application solves quadratic equations of the form `ax^2 + bx + c = 0` and prints the roots of the equation.
@@ -19,10 +19,12 @@ There are two mods to use the application:
 ## Installation
 
 ### I variant:
-1. Download the application from [_here_](https://github.com/mtrpz-course/cli-quadratic-equation-solver/releases/download/1.0.0/cli-quadratic-equation-solver-1.0-SNAPSHOT.jar).
-2. Run the Jar-file from the command line:
+1. Download the application from [_here_](https://github.com/mtrpz-course/cli-quadratic-equation-solver/releases/download/1.0.1/qes1.0.1.zip)
+2. Unzip the file - dest.
+3. Run the program from Terminal:
 ```bash
-java -jar path/to/file/cli-quadratic-solver-1.0-SNAPSHOT.jar
+cd path/to/dest && source ./equation.sh
+equation -h
 ```
 ### II variant:
 1. Clone the repository:
